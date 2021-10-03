@@ -1,0 +1,27 @@
+plugins {
+    id 'java'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    compile group: "com.twilio.sdk", name: "twilio", version: "8.0.+"
+    compile group: "com.sparkjava", name: "spark-core", version: "2.7.1"
+    compile group: "org.slf4j", name: "slf4j-simple", version: "1.7.21"
+
+    // https://mvnrepository.com/artifact/com.sparkjava/spark-template-freemarker
+    implementation group: 'com.sparkjava', name: 'spark-template-freemarker', version: '2.7.1'
+
+    // https://mvnrepository.com/artifact/mysql/mysql-connector-java
+    implementation group: 'mysql', name: 'mysql-connector-java', version: '8.0.26'
+
+
+}
