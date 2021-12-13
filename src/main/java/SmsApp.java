@@ -28,11 +28,11 @@ public class SmsApp {
 
         // JDBC Configuration
         String url = cred.url;
-        String user = "root";
+        String user = "postgres";
         String password = cred.password;
         Connection connection = null;
         try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
+            Class.forName("org.postgresql.Driver");
             connection = DriverManager.getConnection(url,user,password);
             System.out.println("The connection was successful");
 
