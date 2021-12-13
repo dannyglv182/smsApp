@@ -3,21 +3,16 @@
         <title> Create a questionnaire! </title>
     </head>
     <body>
-        <h1> Create a questionnaire! </h1>
+        <h1> Send a Message! </h1>
         <h2>Form</h2>
-        <form method = "POST" action="/saveform">
-              <label for "Q1"> Form name</label><br>
+        <form method = "POST" action="/sendmessage">
+              <label for "Q1"> Recipient Phone Number 15554567 </label><br>
               <input type="text" id="Q1" name="Q1"><br>
 
-              <label for "Q2">Question 2:</label><br>
-              <input type="text" id="Q2" name="Q2"><br>
-
-              <label for "Q3">Question 3:</label><br>
-              <input type="text" id="Q3" name="Q3"><br>
-
-              <label for "Q4">Question 4:</label><br>
-              <input type="text" id="receiver" name="Q4"><br>
-
+              <label for "Q2">Body</label><br>
+              <textarea id="Q2" name="Q2" rows="4" cols="50">
+              </textarea>
+              <br>
               <input type="submit" value="Submit">
         </form>
     </body>

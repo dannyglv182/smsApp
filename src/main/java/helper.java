@@ -9,14 +9,19 @@ import com.twilio.type.PhoneNumber;
 public class helper {
 
     /*
-    Parse a Spark req.body() String from a POST request.
-    The req.body() String contains the form name followed by it's questions
+    Read a Spark req.body() String from a POST request.
+    The req.body() String contains the recipient number followed by the message body
     @param String the req.body String
-    returns an array of Strings containing The form name and questions in the form.
+    returns an array of Strings containing The recipient number and the message body.
     */
     public static String[] DtoParser(String body){
         System.out.println(body);
         String[] dto = body.replaceFirst("(&?Q[0-9]=)", "").split("(&?Q[0-9]=)");
+
+        // Handle errors in user input
+        System.out.println((dto[0]));
+
+        // Return the array
         return dto;
     }
 

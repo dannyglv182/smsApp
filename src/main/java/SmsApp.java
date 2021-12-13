@@ -98,19 +98,20 @@ public class SmsApp {
 
 
         /********************************************************************************
-        Endpoint to send out a questionnaire. The first question is sent to a contact and
-        following questions are sent after each response from the contact.
+        Endpoint to send out a message.
         ********************************************************************************/
-        post("/sendquestionnaire", (req, res) -> {
+        post("/sendmessage", (req, res) -> {
             int sms = 0;
             int questionId = 0;
             String toSend = "";
-            String[] parameters = helper.DtoParser(req.body()); // Zero-index = form name, 1th-index = contact number
-            Statement stmt = fC.createStatement();
-            String queryOne = Query.getQuestionsSent(parameters[0]);  // Mysql query string to select the questions sent from a form (if any)
-            ResultSet rs = stmt.executeQuery(queryOne);
+            String[] parameters = helper.DtoParser(req.body()); // Zero-index = recipient's number, 1th-index = message body
+            sms = helper.sendQuestion(parameters[1], parameters[0]);
 
-            while (rs.next()){      // Sets questionId to the id of the last question sent (if there was any) else questionId remains 0
+            // Statement stmt = fC.createStatement();
+            // String queryOne = Query.getQuestionsSent(parameters[0]);  // Mysql query string to select the questions sent from a form (if any)
+            // ResultSet rs = stmt.executeQuery(queryOne);
+
+/*            while (rs.next()){      // Sets questionId to the id of the last question sent (if there was any) else questionId remains 0
                 questionId= rs.getInt("question_id");
             }
 
@@ -124,7 +125,7 @@ public class SmsApp {
             }
             else {  // A question in the questionnaire has already been sent. Let's send the next question in ascending order by ID
 
-            }
+            }*/
             return "Thank you";
         });
 
