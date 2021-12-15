@@ -107,25 +107,13 @@ public class SmsApp {
             String[] parameters = helper.DtoParser(req.body()); // Zero-index = recipient's number, 1th-index = message body
             sms = helper.sendQuestion(parameters[1], parameters[0]);
 
-            // Statement stmt = fC.createStatement();
-            // String queryOne = Query.getQuestionsSent(parameters[0]);  // Mysql query string to select the questions sent from a form (if any)
-            // ResultSet rs = stmt.executeQuery(queryOne);
+            // Store the message sent
+            Statement stmt = fC.createStatement();
+            String queryOne = Query.insertMessage(parameters[1]);  // query string to store the message in the database
+            stmt.execute(queryOne, Statement.RETURN_GENERATED_KEYS);
 
-/*            while (rs.next()){      // Sets questionId to the id of the last question sent (if there was any) else questionId remains 0
-                questionId= rs.getInt("question_id");
-            }
+            // Create a receipt
 
-            if (questionId == 0){   // The first question in the questionnaire has not been sent. Let's send it
-                String queryTwo = Query.GetFirstQuestion(parameters[0]);
-                rs = stmt.executeQuery(queryTwo);
-                while (rs.next()){
-                    toSend = rs.getString("text");
-                    // sms = helper.sendQuestion(toSend, "");
-                }
-            }
-            else {  // A question in the questionnaire has already been sent. Let's send the next question in ascending order by ID
-
-            }*/
             return "Thank you";
         });
 

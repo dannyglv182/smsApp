@@ -10,12 +10,12 @@ CREATE DATABASE testdb
     CONNECTION LIMIT = -1;
 
 CREATE TABLE message (
-  message_id INTEGER PRIMARY KEY,
+  message_id SERIAL PRIMARY KEY,
   body TEXT
 );
 
 CREATE TABLE receipt (
-    receipt_id INTEGER PRIMARY KEY,
+    receipt_id SERIAL PRIMARY KEY,
     message_id INTEGER,
     Receiver_Number TEXT,
     CONSTRAINT fk_message

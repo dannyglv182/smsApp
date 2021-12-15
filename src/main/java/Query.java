@@ -7,6 +7,15 @@ import java.util.Arrays;
 
 public class Query {
 
+    public static String insertMessage(String messageBody){
+        // fields Zero-index = recipient's number, 1th-index = message body
+        String insertOp = "INSERT INTO message (body) VALUES ('" + messageBody + "')";
+        return insertOp;
+    }
+
+    public static String StoreReceipt(){
+        return "a";
+    }
 
     /*
     Creates a MySQL syntax string for JDBC to insert a new form into the db
