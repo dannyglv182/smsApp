@@ -105,14 +105,22 @@ public class SmsApp {
             int questionId = 0;
             String toSend = "";
             String[] parameters = helper.DtoParser(req.body()); // Zero-index = recipient's number, 1th-index = message body
-            sms = helper.sendQuestion(parameters[1], parameters[0]);
+            sms = helper.sendQuestion(parameters[1], parameters[0]);    // Sends the text
 
-            // Store the message sent
+            // Stores the message sent in the database
             Statement stmt = fC.createStatement();
-            String queryOne = Query.insertMessage(parameters[1]);  // query string to store the message in the database
+            String queryOne = Query.insertMessage(parameters[1]);  // A query string to insert the message into the database
             stmt.execute(queryOne, Statement.RETURN_GENERATED_KEYS);
 
-            // Create a receipt
+            // Creates a receipt in the database
+            ResultSet rs = stmt.getGeneratedKeys();
+            int message_id = -1;
+            if (rs.next()){
+                message_id = rs.getInt(1);
+            }
+            String insertReceipt = Query.insertReceipt(message_id, parameters[0]);
+            System.out.println(insertReceipt);
+            stmt.execute(insertReceipt);
 
             return "Thank you";
         });

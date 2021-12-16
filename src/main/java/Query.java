@@ -13,8 +13,14 @@ public class Query {
         return insertOp;
     }
 
-    public static String StoreReceipt(){
-        return "a";
+    public static String insertReceipt(int messageID, String reveiverNumber){
+        String messageId = String.valueOf(messageID);
+        String insertOp = "INSERT INTO receipt (message_id, receiver_number) " +
+                          "VALUES ('" +
+                           messageID + "'," +
+                           "'" + reveiverNumber +
+                           "')";
+        return insertOp;
     }
 
     /*
