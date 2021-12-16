@@ -44,8 +44,8 @@ public class SmsApp {
 
 
         /********************************************************************************
-        Home page - View form to create a new questionnaire here.
-        ********************************************************************************/
+         Home page - View form to send a text message.
+         ********************************************************************************/
         get("/", (req, res) -> {
             Map<String, Object> model = new HashMap<>();
             return new FreeMarkerEngine(configuration).render(
@@ -55,50 +55,8 @@ public class SmsApp {
 
 
         /********************************************************************************
-         View form to send a questionnaire here.
-         ********************************************************************************/
-        get("/sendform", (req, res) -> {
-            Map<String, Object> model = new HashMap<>();
-            return new FreeMarkerEngine(configuration).render(
-                    new ModelAndView(model, "sendform.ftl")
-            );
-        });
-
-
-        /********************************************************************************
-        Endpoint to create a questionnaire.
-        The controller should take the fields and push them the database as a new
-        questionnaire.
-        ********************************************************************************/
-        post("/saveform", (req, res) ->{
-
-            // Parse the POST request and create an array of strings
-            // only containing the user response portion of the POST request
-            String[] fields = helper.DtoParser(req.body());
-
-            // Push the new form to the db
-            String push = Query.CreateNewForm(fields);         // The mySQL query to create a new questionnaire
-            Statement statement = fC.createStatement();
-            statement.execute(push, Statement.RETURN_GENERATED_KEYS);     // INSERTS the new form and returns the new form key
-
-            // Get the new form's primary key
-            ResultSet rs = statement.getGeneratedKeys();
-            int form_id = -1;
-            if (rs.next()){
-                form_id = rs.getInt(1);
-            }
-
-            // INSERT the questions into the db with the form's pk as their fk
-            String[] to_push_questions = Query.CreateQuestions(fields, form_id);
-            for (int i = 0; i < to_push_questions.length; i++) {
-                statement.execute(to_push_questions[i]);
-            }
-            return req.body();
-        });
-
-
-        /********************************************************************************
         Endpoint to send out a message.
+        A text message is sent and a receipt is stored in the database.
         ********************************************************************************/
         post("/sendmessage", (req, res) -> {
             int sms = 0;
