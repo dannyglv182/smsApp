@@ -26,6 +26,7 @@ This application uses Twilio, Java, JDBC, and the Spark Web Framework to send a 
 * Set TwilPhoneNumber to your Twilio Phone Number.
 * Run SmsApp.java and go to localhost:4567
 
+## Files
  - SmsApp.java
 	 - This file contains the HTTP methods. HTTP request methods are implemented through the Spark micro framwork. Functions to send text messages, and carry out CRUD operations on the database are called from here. Database connectivity is established using JDBC and PostgreSql.
 
@@ -37,3 +38,8 @@ This application uses Twilio, Java, JDBC, and the Spark Web Framework to send a 
 
 - cred.java
 	- This file contains the required passwords for Twilio and JDBC
+
+## Documentation
+* https://sparkjava.com/documentation
+* https://www.postgresql.org/docs/current/
+* https://www.twilio.com/docs/sms
