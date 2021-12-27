@@ -15,7 +15,7 @@ This application uses Twilio, Java, JDBC, and the Spark Web Framework to send a 
 
 ## Files
  - SmsApp.java
-	 - This file contains the HTTP methods. HTTP request methods are implemented through the Spark micro framwork. Functions to send text messages, and carry out CRUD operations on the database are called from here. Database connectivity is established using JDBC and PostgreSql.
+	 - This file contains the HTTP methods. HTTP request methods are implemented through the Spark micro framework. Functions to send text messages, and carry out CRUD operations on the database are called from here. Database connectivity is established using JDBC and PostgreSql.
 
 - Query.java
 	-  This file creates sql queries as strings to use with PostgreSQL and JDBC.
