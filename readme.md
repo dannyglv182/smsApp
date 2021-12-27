@@ -6,24 +6,11 @@ This application uses Twilio, Java, JDBC, and the Spark Web Framework to send a 
 *Instructions to build and run your project.*
 * Clone the repository.
 * Select new project from existing sources In IntelliJ IDEA and choose the new folder you cloned.
-* Create a file named cred.java in src/main/java
-* Add the following to cred.java
-```
-	public class cred {
-    		static String url = "";
-    		static String password = "";
-    		static String twilUsername = "";
-    		static String twilPassword = "";
-    		static String twilPhoneNUmber = "";
-	}
-```
-* Download and install postgresql if you haven't yet and create a database.
-* Set url to jdbc:postgresql://host:port/database
-* Set password to the password for your database.
-* Create a Twilio Account if you haven't yet.
+* Add jdbc:postgresql://host:port/database to url in cred.java
 * Set TwilUsername to your TWilio Account SID.
 * Set TwilPassword to your Twilio Auth Token.
 * Set TwilPhoneNumber to your Twilio Phone Number.
+* Set password to the password for your database.
 * Run SmsApp.java and go to localhost:4567
 
 ## Files
