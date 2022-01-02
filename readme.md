@@ -14,7 +14,7 @@ This application uses Twilio, Java, JDBC, and the Spark Web Framework to send a 
 * Run SmsApp.java and go to localhost:4567
 
 ## Files
- - SmsApp.java
+ - [SmsApp.java](https://github.com/dannyglv182/smsApp/blob/main/src/main/java/SmsApp.java)
 	 - This file contains the HTTP methods. HTTP request methods are implemented through the Spark micro framework. Functions to send text messages, and carry out CRUD operations on the database are called from here. Database connectivity is established using JDBC and PostgreSql.
 
 - [Query.java](https://github.com/dannyglv182/smsApp/blob/main/src/main/java/Query.java)
