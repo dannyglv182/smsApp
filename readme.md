@@ -3,7 +3,7 @@
 This application uses Twilio, Java, JDBC, and the Spark Web Framework to send a text message from a web page form.
 
 ## Build and Run
-*Instructions to build and run your project.*
+*Instructions to build and run the project.*
 * Clone the repository.
 * Select new project from existing sources In IntelliJ IDEA and choose the new folder you cloned.
 * Add jdbc:postgresql://host:port/database to url in cred.java
@@ -30,8 +30,3 @@ This application uses Twilio, Java, JDBC, and the Spark Web Framework to send a 
 * https://sparkjava.com/documentation
 * https://www.postgresql.org/docs/current/
 * https://www.twilio.com/docs/sms
-
-## Clip
-![process](https://uc93662496506e675186da27d5ae.previews.dropboxusercontent.com/p/thumb/ABZHywNy_RQC4fmK2wJjLppOJ5neMZjsXDT5ZdJ8c6IpCKWbmkIJCrfaNUcOK04sn0kzH5ZvQARNlxNQNCIlIXFxKj5TuYFq1UpB6UkhJ9NjM8_6cFikRY-slg4Lg7rSIClq_BeH0nZ6p3ZhP5eaK70zzx6dLyp7-G-zTZtqAzSAIqfiGmgDa5-Eedgx69uMZSx-wGCtnKom_liKuGlev-yTYE4UKUkqbRrGZ3EWH1I6s5TSiFa9uQpHPeDSUnjxz2FF57sY_c2puy9Ve_B_2ik-xLLNrFck_RcKmScLXoEPdtAUeEmdmIKFi4q_s8l583Dry39-xq6-0wMrJ8Sgws9oaZGrfHOO_Uayy5G-2DsmBFXGvkjQ28dCnjmulEKCQOw/p.gif)
-
-
