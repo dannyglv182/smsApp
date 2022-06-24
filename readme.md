@@ -6,7 +6,8 @@ This application uses Twilio, Java, JDBC, and the Spark Web Framework to send a 
 *Instructions to build and run the project.*
 * Clone the repository.
 * Select new project from existing sources In IntelliJ IDEA and choose the new folder you cloned.
-* Add jdbc:postgresql://host:port/database to url in cred.java
+* Create a PostgreSQL database if you do not already have one.
+* Add jdbc:postgresql://host:port/database to the url string variable in cred.java
 * Set TwilUsername to your Twilio Account SID.
 * Set TwilPassword to your Twilio Auth Token.
 * Set TwilPhoneNumber to your Twilio Phone Number.
