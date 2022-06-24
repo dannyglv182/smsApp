@@ -4,7 +4,11 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Arrays;
 
-
+/**
+* Returns a PostgreSQL INSERT operation of type string
+ * This is used to add a copy of the sms that was sent to the database
+ * @return insertOp
+ */
 public class Query {
 
     public static String insertMessage(String messageBody){
