@@ -6,7 +6,8 @@ import java.util.Arrays;
 
 /**
 * Returns a PostgreSQL INSERT operation of type string
- * This is used to add a copy of the sms that was sent to the database
+ * This is used to add a copy of the sms that was sent to the database.
+ * The string returned here is used by JDBC to execute the query against the database.
  * @return insertOp
  */
 public class Query {
