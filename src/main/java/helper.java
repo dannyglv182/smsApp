@@ -8,12 +8,15 @@ import com.twilio.type.PhoneNumber;
 
 public class helper {
 
-    /********************************************************************************
-    Reads a Spark req.body() String from a POST request.
-    The req.body() String contains the recipient number followed by the message body
-    @param String the req.body String
-    returns an array of Strings containing The recipient number and the message body.
-    ********************************************************************************/
+    /**
+     * Reads a POST request to get recipient and message.
+     * The req.body() String contains the recipient number followed by the message body
+     * The message and phone number use Q1 and Q2 as ids in the html form and are
+     * extracted here using the replaceFirst and split functions with regex.
+     * returns an array containing The recipient number and the message body.
+     * @param body - a spark request.body object
+     * @return dto - an array containing the recipient phone number and message body
+     */
     public static String[] DtoParser(String body){
         String[] dto = body.replaceFirst("(&?Q[0-9]=)", "").split("(&?Q[0-9]=)");
         dto[1] = dto[1].replace('+', ' ');
