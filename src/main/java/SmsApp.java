@@ -43,9 +43,9 @@ public class SmsApp {
         final Connection fC= finalConnection;
 
 
-        /********************************************************************************
-         Home page - View form to send a text message.
-         ********************************************************************************/
+        /**
+         * Home page - View form to send a text message.
+         */
         get("/", (req, res) -> {
             Map<String, Object> model = new HashMap<>();
             return new FreeMarkerEngine(configuration).render(
@@ -54,10 +54,10 @@ public class SmsApp {
         });
 
 
-        /********************************************************************************
-        Endpoint to send out a message.
-        A text message is sent and a receipt is stored in the database.
-        ********************************************************************************/
+        /**
+         * Endpoint to send out a message.
+         * A text message is sent and a receipt is stored in the database.
+         */
         post("/sendmessage", (req, res) -> {
             int sms = 0;
             int questionId = 0;
@@ -84,9 +84,9 @@ public class SmsApp {
         });
 
 
-        /********************************************************************************
-        Twilio webhook - Responds to incoming sms
-        ********************************************************************************/
+        /**
+         * Twilio webhook - Responds to incoming sms
+         */
         post("/sms", (req, res) -> {
             String twilRequest = req.body();        // Contains the incoming text cell number and message body
             System.out.println(twilRequest);
